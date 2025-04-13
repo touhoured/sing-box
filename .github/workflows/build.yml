@@ -179,6 +179,7 @@ jobs:
       - name: Package DEB
         if: matrix.debian != ''
         run: |
+          exit 0
           set -xeuo pipefail
           sudo gem install fpm
           sudo apt-get install -y debsigs
@@ -197,6 +198,7 @@ jobs:
       - name: Package RPM
         if: matrix.rpm != ''
         run: |-
+          exit 0
           set -xeuo pipefail
           sudo gem install fpm
           fpm -t rpm \
@@ -215,6 +217,7 @@ jobs:
       - name: Package Pacman
         if: matrix.pacman != ''
         run: |-
+          exit 0
           set -xeuo pipefail
           sudo gem install fpm
           sudo apt-get install -y libarchive-tools
